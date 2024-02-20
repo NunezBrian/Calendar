@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const now = new Date();
     currentDay.textContent = `Today is ${now.toLocaleDateString()}`;
 
-    for (let hour = 0; hour < 24; hour++) {
+    // Start loop at 9 AM and end at 5 PM
+    for (let hour = 9; hour <= 17; hour++) {
         const timeBlock = document.createElement('div');
         timeBlock.classList.add('time-block');
         
@@ -14,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const eventDiv = document.createElement('div');
         eventDiv.classList.add('event');
-        eventDiv.contentEditable = true; // Makes the event block editable
-        eventDiv.dataset.hour = hour; // Store the hour for saving later
+        eventDiv.contentEditable = true; 
+        eventDiv.dataset.hour = hour; 
         
         const saveBtn = document.createElement('button');
         saveBtn.classList.add('saveBtn');
@@ -42,16 +43,12 @@ document.addEventListener('DOMContentLoaded', function() {
         container.appendChild(timeBlock);
     }
 });
-
+            // hour formating
 function formatHour(hour) {
-    if (hour === 0) {
-        return '12AM';
-    } else if (hour < 12) {
-        return `${hour}AM`;
-    } else if (hour === 12) {
-        return '12PM';
+    if (hour === 0 || hour === 12) {
+        return `${12} ${hour === 0 ? 'AM' : 'PM'}`;
     } else {
-        return `${hour - 12}PM`;
+        return `${hour > 12 ? hour - 12 : hour} ${hour >= 12 ? 'PM' : 'AM'}`;
     }
 }
 
