@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.scheduler {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header {
+    background: #f3f3f3;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header h2 {
+    margin: 10px 0;
+}
+
+.date {
+    font-size: 1.2em;
+}
+
+.time-blocks {
+    margin: 20px 0;
+}
+
+.time-block {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    background-color: #e2e2e2;
+}
+
+.time-block.past .event {
+    background-color: #d9d9d9;
+}
+
+.time-block.present .event {
+    background-color: #ff6961;
+}
+
+.time-block.future .event {
+    background-color: #77dd77;
+}
+
+.hour {
+    width: 10%;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.event {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.saveBtn {
+    padding: 10px 20px;
+    background-color: #6fa8dc;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.saveBtn:hover {
+    background-color: #557a95;
+}
+
+.event {
+    /* ... [previous CSS rules] ... */
+    background-color: aqua;
+    cursor: text;
+}
+
+.event[contenteditable="true"]:empty:before {
+    content: "Click to add event...";
+    color: #ccc;
+}
+
+
