@@ -78,7 +78,6 @@ body {
 }
 
 .event {
-    /* ... [previous CSS rules] ... */
     background-color: aqua;
     cursor: text;
 }
